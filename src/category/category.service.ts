@@ -1,4 +1,4 @@
-import { Injectable,Param,Req } from '@nestjs/common'
+import { Injectable } from '@nestjs/common'
 import { Request } from 'express'
 
 @Injectable()
@@ -9,19 +9,19 @@ export class CategoryService{
         return { category:"Electronics" }
     }
 
-    show(@Param() param:{ categoryId: number }){
+    show(param:{ categoryId: number }){
         return param
     }
 
-    store(@Req() req:Request){
+    store(req:Request){
         return req.body
     }
 
-    update(@Req() req:Request, @Param() param:{categoryId:number}){
+    update(req:Request, param:{categoryId:number}){
         return { body:req.body, param: param}
     }
 
-    delete(@Param() param:{categoryId:number}){
+    delete(param:{categoryId:number}){
         return param
     }
 }

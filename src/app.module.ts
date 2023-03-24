@@ -4,10 +4,12 @@ import { AppService } from './app.service';
 import { UserService } from './user/user.service';
 import { UserController } from './user/user.controller';
 import { UserModule } from './user/user.module';
+import { CategoryController } from './category/category.controller';
+import { CategoryService } from './category/category.service';
 
 @Module({
   imports: [UserModule],
-  controllers: [AppController, UserController],
-  providers: [AppService, UserService],
+  controllers: [AppController, UserController,CategoryController],
+  providers: [AppService, UserService,CategoryService],
 })
 export class AppModule {}
