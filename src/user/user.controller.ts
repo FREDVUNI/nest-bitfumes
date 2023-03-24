@@ -1,32 +1,34 @@
 import { Controller, Delete, Get, Param, Patch, Post, Req } from '@nestjs/common';
 import { Request } from 'express';
+import { UserService } from './user.service';
 
 @Controller('user')
 export class UserController {
+    constructor (private userService:UserService){}
 
     @Get()
     getUsers(){
-        return { name:"vuni",email:"fredvuni809@gmail.com" }    
+        return this.userService.get()    
     }
 
     @Post()
     createUser(@Req() req:Request){
-        return req.body
+        return this.userService.store(req)
     }
 
     @Get('/:userId')
-    getUser(@Param() params: {userId: Number}){
-        return params
+    getUser(@Param() param: {userId: number}){
+        return this.userService.user(param)
     }
 
     @Patch('/:userId')
-    updateUser(@Req() req:Request){
-        return req.body
+    updateUser(@Req() req:Request, @Param() param:{ userId:number }){
+        return this.userService.update(req,param)
     }
 
     @Delete('/:userId')
-    deleteUser(@Param() params:{userId:Number}){
-        return params
+    deleteUser(@Param() param:{userId:number}){
+        return this.userService.delete(param)
     }
 
 }
