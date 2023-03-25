@@ -11,8 +11,13 @@ import { ProductService } from './product/product.service';
 import { ProductModule } from './product/product.module';
 
 @Module({
-  imports: [UserModule,ProductModule],
-  controllers: [AppController, UserController,CategoryController,ProductController],
-  providers: [AppService, UserService,CategoryService,ProductService],
+  imports: [UserModule, ProductModule],
+  controllers: [
+    AppController,
+    UserController,
+    CategoryController,
+    ProductController,
+  ],
+  providers: [AppService, UserService, CategoryService, ProductService],
 })
 export class AppModule {}
