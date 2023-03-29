@@ -1,5 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { Request } from 'express'
+import { createCategoryDto } from './dto/create.category.dto'
+import { updateCategoryDto } from './dto/update.category.dto'
 
 @Injectable()
 
@@ -13,12 +15,12 @@ export class CategoryService{
         return param
     }
 
-    store(req:Request){
-        return req.body
+    store(body:createCategoryDto){
+        return body
     }
 
-    update(req:Request, param:{categoryId:number}){
-        return { body:req.body, param: param}
+    update(body:updateCategoryDto, param:{categoryId:number}){
+        return { body, param: param}
     }
 
     delete(param:{categoryId:number}){
