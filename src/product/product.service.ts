@@ -11,13 +11,13 @@ export class ProductService {
   get() {
     return { product: 'Refrigerator' };
   }
-  show(param: { productId: number }) {
-    return param;
+  show(productId: number) {
+    return productId;
   }
-  update(@Body() body: updateProductDto, param: { productId: number }) {
-    return { body, params: param };
+  update(@Body() body: updateProductDto, productId: number) {
+    return { body, params: productId };
   }
-  delete(param: { productId: number }) {
-    return param;
+  delete(productId: number) {
+    return productId;
   }
 }

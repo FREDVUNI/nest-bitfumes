@@ -7,6 +7,7 @@ import {
   Patch,
   Delete,
   Body,
+  ParseIntPipe,
 } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { Request } from 'express';
@@ -25,15 +26,15 @@ export class ProductController {
     return this.productService.get();
   }
   @Get('/:productId')
-  getProduct(@Param() param: { productId: number }) {
-    return this.productService.show(param);
+  getProduct(@Param('productId',ParseIntPipe) productId: number) {
+    return this.productService.show(productId);
   }
   @Patch('/:productId')
-  updateProduct(@Req() body: updateProductDto, @Param() param: { productId: number }) {
-    return this.productService.update(body, param);
+  updateProduct(@Body() body: updateProductDto, @Param('productId',ParseIntPipe) productId: number) {
+    return this.productService.update(body, productId);
   }
   @Delete('/:productId')
-  deleteProduct(@Param() param: { productId: number }) {
-    return this.productService.delete(param);
+  deleteProduct(@Param('productId',ParseIntPipe) productId: number) {
+    return this.productService.delete(productId);
   }
 }
