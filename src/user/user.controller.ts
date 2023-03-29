@@ -29,8 +29,8 @@ export class UserController {
     }
 
     @Delete('/:userId')
-    deleteUser(@Param() param:{userId:number}){
-        return this.userService.delete(param)
+    deleteUser(@Param('userId',ParseIntPipe) userId:number){
+        return this.userService.delete(userId)
     }
 
 }

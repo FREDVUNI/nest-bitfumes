@@ -22,7 +22,7 @@ export class UserService {
         return {body,param:userId}
     }
 
-    delete(params: {userId:number}){
-        return params
+    delete(userId:number){
+        return userId
     }
 }
