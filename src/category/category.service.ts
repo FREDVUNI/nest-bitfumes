@@ -11,19 +11,19 @@ export class CategoryService{
         return { category:"Electronics" }
     }
 
-    show(param:{ categoryId: number }){
-        return param
+    show(categoryId: number){
+        return categoryId
     }
 
     store(body:createCategoryDto){
         return body
     }
 
-    update(body:updateCategoryDto, param:{categoryId:number}){
-        return { body, param: param}
+    update(body:updateCategoryDto, categoryId: number){
+        return { body, param: categoryId}
     }
 
-    delete(param:{categoryId:number}){
-        return param
+    delete(categoryId: number){
+        return categoryId
     }
 }
