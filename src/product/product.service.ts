@@ -1,10 +1,12 @@
-import { Injectable, Param, Req } from '@nestjs/common';
+import { Injectable,Body,Param } from '@nestjs/common';
 import { Request } from 'express';
+import { createProductDto } from './dto/create.product.dto';
+import { updateProductDto } from './dto/update.product.dto';
 
 @Injectable()
 export class ProductService {
-  create(@Req() req: Request) {
-    return req.body;
+  create(@Body() body: createProductDto) {
+    return body;
   }
   get() {
     return { product: 'Refrigerator' };
@@ -12,8 +14,8 @@ export class ProductService {
   show(@Param() param: { productId: number }) {
     return param;
   }
-  update(@Req() req: Request, @Param() param: { productId: number }) {
-    return { body: req.body, params: param };
+  update(@Body() body: updateProductDto, @Param() param: { productId: number }) {
+    return { body, params: param };
   }
   delete(@Param() param: { productId: number }) {
     return param;
