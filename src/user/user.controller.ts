@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Param, Patch, Post, Req, Body } from '@nestjs/common';
+import { Controller, Delete, Get, Param, Patch, Post, Req, Body, ParseIntPipe } from '@nestjs/common';
 import { Request } from 'express';
 import { createUserDto } from './dto/create.user.dto';
 import { updateUserDto } from './dto/update.user.dto';
@@ -19,13 +19,13 @@ export class UserController {
     }
 
     @Get('/:userId')
-    getUser(@Param() param: {userId: number}){
-        return this.userService.user(param)
+    getUser(@Param('userId',ParseIntPipe) userId: number){
+        return this.userService.user(userId)
     }
 
     @Patch('/:userId')
-    updateUser(@Body() body:updateUserDto, @Param() param:{ userId:number }){
-        return this.userService.update(body,param)
+    updateUser(@Body() body:updateUserDto, @Param('userId',ParseIntPipe) userId:number){
+        return this.userService.update(body,userId)
     }
 
     @Delete('/:userId')

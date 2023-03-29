@@ -14,12 +14,12 @@ export class UserService {
         return body
     }
 
-    user(param: {userId:number}){
-        return param
+    user(userId: number){
+        return userId
     }
 
-    update(body:updateUserDto,param:{userId:number}){
-        return {body,param:param}
+    update(body:updateUserDto,userId:number){
+        return {body,param:userId}
     }
 
     delete(params: {userId:number}){
