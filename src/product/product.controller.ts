@@ -21,15 +21,15 @@ export class ProductController {
   getProducts() {
     return this.productService.get();
   }
-  @Get()
+  @Get('/:productId')
   getProduct(@Param() param: { productId: number }) {
     return this.productService.show(param);
   }
-  @Patch()
+  @Patch('/:productId')
   updateProduct(@Req() req: Request, @Param() param: { productId: number }) {
     return this.productService.update(req, param);
   }
-  @Delete()
+  @Delete('/:productId')
   deleteProduct(@Param() param: { productId: number }) {
     return this.productService.delete(param);
   }
