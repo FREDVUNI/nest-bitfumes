@@ -11,8 +11,10 @@ export class UserService {
         @InjectRepository(User)
         private userRepository:Repository<User>
     ){} 
-    get(){
-        return { name:"vuni",email:"fredvuni809@gmail.com" }
+    get():Promise<User[]>{
+        let users = this.userRepository.find()
+        return users
+        // return { name:"vuni",email:"fredvuni809@gmail.com" }
     }
 
     store(body:createUserDto){

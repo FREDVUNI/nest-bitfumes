@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from "class-validator/types/decorator/decorators";
+import { IsNotEmpty, IsString } from "class-validator";
 
 export class updateProductDto{
     @IsString()

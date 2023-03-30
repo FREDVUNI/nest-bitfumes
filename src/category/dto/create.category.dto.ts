@@ -1,4 +1,4 @@
-import { IsString,IsNotEmpty } from "class-validator/types/decorator/decorators";
+import { IsString,IsNotEmpty } from "class-validator";
 
 export class createCategoryDto{
     @IsNotEmpty()
