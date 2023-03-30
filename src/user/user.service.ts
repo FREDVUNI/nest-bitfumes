@@ -17,8 +17,8 @@ export class UserService {
     // return { name:"vuni",email:"fredvuni809@gmail.com" }
   }
 
-  store(body: createUserDto) {
-    return this.userRepository.save(body);
+  store(createUserDto: createUserDto) {
+    return this.userRepository.save(createUserDto);
   }
 
   user(userId: number) {
@@ -26,8 +26,8 @@ export class UserService {
     return user;
   }
 
-  update(body: updateUserDto, userId: number) {
-    return { body, param: userId };
+  update(updateUserDto: updateUserDto, userId: number) {
+    return this.userRepository.update(updateUserDto, userId);
   }
 
   delete(userId: number) {
