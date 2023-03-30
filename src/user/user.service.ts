@@ -31,6 +31,6 @@ export class UserService {
   }
 
   delete(userId: number) {
-    return userId;
+    return this.userRepository.delete(userId);
   }
 }
