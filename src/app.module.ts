@@ -6,6 +6,7 @@ import { CategoryModule } from './category/category.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppService } from './app.service';
 import { User } from './user/entity/user.entity';
+import { Category } from './category/entity/category.entity';
 
 @Module({
   controllers: [
@@ -23,7 +24,7 @@ import { User } from './user/entity/user.entity';
       username: 'root',
       password: '',
       database: 'nest',
-      entities: [User],
+      entities: [User,Category],
       synchronize: true, //should not be used in production or you'll lose the data
     }),
   ],
