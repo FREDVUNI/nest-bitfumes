@@ -5,6 +5,7 @@ import { ProductModule } from './product/product.module';
 import { CategoryModule } from './category/category.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppService } from './app.service';
+import { User } from './user/entity/user.entity';
 
 @Module({
   controllers: [
@@ -22,7 +23,7 @@ import { AppService } from './app.service';
       username: 'root',
       password: '',
       database: 'nest',
-      entities: [],
+      entities: [User],
       synchronize: true, //should not be used in production or you'll lose the data
     }),
   ],
