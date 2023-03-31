@@ -7,12 +7,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppService } from './app.service';
 import { User } from './user/entity/user.entity';
 import { Category } from './category/entity/category.entity';
+import { Product } from './product/entity/product.entity';
 
 @Module({
-  controllers: [
-    AppController,
-  ],
-  providers:[AppService],
+  controllers: [AppController],
+  providers: [AppService],
   imports: [
     UserModule,
     ProductModule,
@@ -24,7 +23,7 @@ import { Category } from './category/entity/category.entity';
       username: 'root',
       password: '',
       database: 'nest',
-      entities: [User,Category],
+      entities: [User, Category, Product],
       synchronize: true, //should not be used in production or you'll lose the data
     }),
   ],
