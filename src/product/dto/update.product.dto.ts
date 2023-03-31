@@ -1,15 +1,19 @@
-import { IsNotEmpty, IsString } from "class-validator";
+import { IsNotEmpty, IsString } from 'class-validator';
 
-export class updateProductDto{
-    @IsString()
-    @IsNotEmpty()
-    product:string;
+export class updateProductDto {
+  @IsString()
+  @IsNotEmpty()
+  product: string;
 
-    @IsString()
-    @IsNotEmpty()
-    price:string;
+  @IsString()
+  @IsNotEmpty()
+  category: string;
 
-    @IsString()
-    @IsNotEmpty()
-    details:string;
+  @IsString()
+  @IsNotEmpty()
+  price: number;
+
+  @IsString()
+  @IsNotEmpty()
+  description: string;
 }

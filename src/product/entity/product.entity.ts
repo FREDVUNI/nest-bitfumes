@@ -9,7 +9,7 @@ export class Product {
   product: string;
 
   @Column()
-  price: string;
+  price: number;
 
   @Column()
   category: string;
