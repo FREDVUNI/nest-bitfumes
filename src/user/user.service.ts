@@ -30,6 +30,14 @@ export class UserService {
     return this.userRepository.update(userId, updateUserDto);
   }
 
+  findEmail(email:string){
+    return this.userRepository.findOne({
+      where:{
+        email
+      }
+    })
+  }
+
   delete(userId: number) {
     return this.userRepository.delete(userId);
   }

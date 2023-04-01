@@ -8,14 +8,17 @@ import { AppService } from './app.service';
 import { User } from './user/entity/user.entity';
 import { Category } from './category/entity/category.entity';
 import { Product } from './product/entity/product.entity';
+import { AuthModule } from './auth/auth.module';
+import { AuthController } from './auth/auth.controller';
 
 @Module({
-  controllers: [AppController],
+  controllers: [AppController,AuthController],
   providers: [AppService],
   imports: [
     UserModule,
     ProductModule,
     CategoryModule,
+    AuthModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
