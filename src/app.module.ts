@@ -9,10 +9,9 @@ import { User } from './user/entity/user.entity';
 import { Category } from './category/entity/category.entity';
 import { Product } from './product/entity/product.entity';
 import { AuthModule } from './auth/auth.module';
-import { AuthController } from './auth/auth.controller';
 
 @Module({
-  controllers: [AppController,AuthController],
+  controllers: [AppController],
   providers: [AppService],
   imports: [
     UserModule,
