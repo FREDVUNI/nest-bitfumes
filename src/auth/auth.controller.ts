@@ -15,5 +15,6 @@ export class AuthController {
                 return user
             }
         }
+        return "Unauthenticated"
     }
 }
