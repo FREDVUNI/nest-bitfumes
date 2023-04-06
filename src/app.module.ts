@@ -9,6 +9,7 @@ import { User } from './user/entity/user.entity';
 import { Category } from './category/entity/category.entity';
 import { Product } from './product/entity/product.entity';
 import { AuthModule } from './auth/auth.module';
+import { ProfileModule } from './profile/profile.module';
 
 @Module({
   controllers: [AppController],
@@ -28,6 +29,7 @@ import { AuthModule } from './auth/auth.module';
       entities: [User, Category, Product],
       synchronize: true, //should not be used in production or you'll lose the data
     }),
+    ProfileModule,
   ],
 })
 export class AppModule {}
